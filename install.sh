@@ -131,14 +131,12 @@ function docker-install {
   #test the installation
   docker version
 }
-
 # Kubernetes
 function kubernetes {
   curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
   sudo apt-add-repository -y "deb http://apt.kubernetes.io/ kubernetes-xenial main"
   sudo apt-get -y install kubeadm kubelet kubectl
 }
-
 # Helm 
 function helm {
   curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
@@ -147,7 +145,13 @@ function helm {
   sudo apt-get -y update
   sudo apt-get -y install helm
 }
-
+# Kind
+function kind-install {
+  curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.9.0/kind-linux-amd64
+  sudo chmod +x ./kind
+  sudo mv ./kind /usr/bin/kind
+  kind create cluster --name kind
+}
 
 ### Installing Cloud Stuff
 #
@@ -188,12 +192,13 @@ function finish {
   sudo apt upgrade -y/
   sudo apt autoremove -y
 }
-### Manual Steps: 
 
+### Manual Steps: 
+#
 # Add Keyboard Layout Icon on the TopBar
 
 # Set Walpaper 
-
+###
 
 function main {
 #  git-clone-script
@@ -206,9 +211,10 @@ function main {
 #  docker-install
 #  kubernetes
 #  helm
+  kind-install
 #  gcloud-sdk
 #  multimedia
-  pimp-the-shell
+#  pimp-the-shell
 #  load-personal-config
 #  finish
 }
