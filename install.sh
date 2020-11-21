@@ -113,7 +113,15 @@ function vscode {
   code --install-extension mads-hartmann.bash-ide-vscode
 }
 
-## Install Kubernetes Stuff
+### Dev Tools
+function dev-tools {
+# Go
+  sudo apt install golang
+  sudo snap install postman
+}
+
+### Install Kubernetes Stuff
+#
 
 # Docker 
 function docker-install {
@@ -144,6 +152,15 @@ function helm {
   echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
   sudo apt-get -y update
   sudo apt-get -y install helm
+  helm repo add gitlab https://charts.gitlab.io/
+  helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
+  helm repo add cern https://s3-website.cern.ch/cern-charts                   
+  helm repo add prometheus-community	https://prometheus-community.github.io/helm-charts       
+  helm repo add bitnami https://charts.bitnami.com/bitnami                       
+  helm repo add jenkins-x http://chartmuseum.jenkins-x.io                          
+  helm repo add stable https://charts.helm.sh/stable                            
+  helm repo add gitlab https://charts.gitlab.io/                                
+  helm repo add lighthouse http://chartmuseum.jenkins-x.io    
 }
 # Kind
 function kind-install {
@@ -208,10 +225,11 @@ function main {
 #  virtualbox-addons
 #  basic-software
 #  vscode
+#  dev-tools 
 #  docker-install
 #  kubernetes
 #  helm
-  kind-install
+#  kind-install
 #  gcloud-sdk
 #  multimedia
 #  pimp-the-shell
