@@ -115,6 +115,7 @@ function vscode {
   code --install-extension yzhang.markdown-all-in-one
   code --install-extension fabiospampinato.vscode-diff
   code --install-extension mads-hartmann.bash-ide-vscode
+  code --install-extension rusnasonov.vscode-hugo
 }
 
 ### Dev Tools
@@ -126,6 +127,8 @@ function dev-tools {
   sudo snap install postman
 # Git
   sudo apt-get install meld -y
+# Hugo
+  sudo apt-get install hugo -y
 }
 
 ### Install Kubernetes Stuff
@@ -247,7 +250,10 @@ function multimedia {
 
 function load-personal-config {
   sudo dconf load / < ~/projects/VM-Setup/config/config.dconf
-  sudo cp ~/projects/VM-Setup/config/.bashrc ~/.bashrc 
+  sudo cp ~/projects/VM-Setup/config/.bashrc ~/.bashrc
+  cp ~/projects/VM-Setup/config/.gitconfig ~/.gitconfig 
+  cp -rf ~/projects/VM-Setup/config/.local ~/.local/
+  sudo apt install preload
 }
 
 function pimp-the-shell {
