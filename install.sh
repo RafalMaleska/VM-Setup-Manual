@@ -50,6 +50,8 @@ function customize {
   setxkbmap de 
   sudo apt install -y gnome-tweaks
   sudo sysctl vm.swappiness=10
+  # Show More Startup Apps
+  sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 }
 
 
@@ -175,6 +177,37 @@ function kind-install {
   sudo mv ./kind /usr/bin/kind
   kind create cluster --name kind
 }
+# Kustomize
+function kustomize-install {
+  curl -s https://api.github.com/repos/kubernetes-sigs/kustomize/releases |\
+  grep browser_download |\
+  grep download/kustomize |\
+  grep -m 1 linux |\
+  cut -d '"' -f 4 |\
+  xargs curl -O -L
+  tar xzf ./kustomize_v*_linux_amd64.tar.gz
+  sudo mv kustomize /usr/bin/kustomize
+  chmod u+x /usr/bin/kustomize
+  rm -rf kustomize_v*_linux_amd64.tar.gz
+}
+# ArgoCD
+function argo-install {
+  VERSION=$(curl --silent "https://api.github.com/repos/argoproj/argo-cd/releases/latest" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
+  sudo curl -sSL -o /usr/bin/argocd https://github.com/argoproj/argo-cd/releases/download/$VERSION/argocd-linux-amd64
+  sudo chmod +x /usr/bin/argocd
+}
+# Kubebuilder
+function kubebuilder-install {
+  os=$(go env GOOS)
+  arch=$(go env GOARCH) 
+  # download kubebuilder and extract it to tmp
+  sudo curl -L https://go.kubebuilder.io/dl/2.3.1/${os}/${arch} | tar -xz -C /tmp/
+  # move to a long-term location and put it on your path
+  # (you'll need to set the KUBEBUILDER_ASSETS env var if you put it somewhere else)
+  sudo mv /tmp/kubebuilder_2.3.1_${os}_${arch} /usr/local/kubebuilder
+  sudo export PATH=$PATH:/usr/local/kubebuilder/bin
+}
+
 
 ### Installing Cloud Stuff
 #
@@ -203,6 +236,8 @@ function multimedia {
   sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:Horst3180.list"
   sudo apt-get update
   sudo apt-get install arc-theme
+  # check this for theme instalation
+  # https://www.youtube.com/watch?v=MNX7HgcWqHc
 }
 
 
@@ -250,6 +285,9 @@ function main {
 #  kubernetes
 #  helm
 #  kind-install
+#  kustomize-install
+#  argo-install
+  kubebuilder-install
 #  gcloud-sdk
 #  multimedia
 #  pimp-the-shell
