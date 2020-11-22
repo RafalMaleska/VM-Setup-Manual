@@ -48,6 +48,8 @@ function customize {
   timedatectl set-timezone Europe/Berlin
   # Set Keyboard to German
   setxkbmap de 
+  sudo apt install -y gnome-tweaks
+  sudo sysctl vm.swappiness=10
 }
 
 
@@ -117,7 +119,11 @@ function vscode {
 function dev-tools {
 # Go
   sudo apt install golang
+# Java
+  sudo apt install default-jdk
   sudo snap install postman
+# Git
+  sudo apt-get install meld -y
 }
 
 ### Install Kubernetes Stuff
@@ -185,6 +191,18 @@ function gcloud-sdk {
 
 function multimedia {
   sudo apt install -y chromium-browser
+  sudo apt install -y vlc
+  sudo apt install -y ubuntu-restricted-extras 
+  sudo apt install -y ubuntu-restricted-addons
+  # instaling gnome extensions
+  sudo apt install -y gnome-shell-extensions
+  sudo apt-get install chrome-gnome-shell
+  # needed for system monitor
+  sudo apt install gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1
+  # install theme
+  sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:Horst3180.list"
+  sudo apt-get update
+  sudo apt-get install arc-theme
 }
 
 
@@ -215,6 +233,8 @@ function finish {
 # Add Keyboard Layout Icon on the TopBar
 
 # Set Walpaper 
+
+# Set bashrc history (maybe rich in passwords)
 ###
 
 function main {

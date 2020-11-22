@@ -1,5 +1,5 @@
-eval $(ssh-agent)
-ssh-add ~/.ssh/id_rsa.key
+eval $(ssh-agent) > /dev/null
+ssh-add ~/.ssh/id_rsa.key > /dev/null 2>&1
 /bin/zsh
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)

@@ -30,7 +30,7 @@ window-width=100
 cursor-shape=0
 
 [apps/guake/style/background]
-transparency=84
+transparency=78
 
 [apps/guake/style/font]
 allow-bold=true
@@ -40,6 +40,14 @@ palette-name='Custom'
 
 [apps/indicator-session]
 show-real-name-on-panel=false
+
+[apps/seahorse/listing]
+item-filter='any'
+keyrings-selected=['gnupg://']
+
+[apps/seahorse/windows/key-manager]
+height=901
+width=1839
 
 [apps/update-manager]
 first-run=false
@@ -239,7 +247,7 @@ arrow-shadow-color='#dcdcdcd9'
 thumb-highlight-gradient-shadow-color='#dfdfdfff'
 
 [org/gnome/control-center]
-last-panel='sound'
+last-panel='ubuntu'
 
 [org/gnome/deja-dup]
 backend='google'
@@ -292,19 +300,19 @@ xkb-options=['grp:alt_shift_toggle', 'grp_led:scroll']
 
 [org/gnome/desktop/interface]
 clock-show-seconds=true
-clock-show-weekday=false
+clock-show-weekday=true
 cursor-theme='Yaru'
 enable-animations=true
 enable-hot-corners=true
 gtk-im-module='gtk-im-context-simple'
-gtk-theme='Yaru-dark'
-icon-theme='elementary'
+gtk-theme='Arc-Dark'
+icon-theme='Arc'
 locate-pointer=true
 show-battery-percentage=true
 toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-software', 'update-manager', 'apport-gtk', 'gnome-power-panel', 'chromium-chromium', 'io-elementary-appcenter', 'unity-tweak-tool', 'code-code', 'org-gnome-epiphany', 'gnome-control-center', 'snap-store-ubuntu-software', 'guake', 'gnome-system-monitor', 'org-gnome-nautilus', 'org-gnome-terminal', 'postman-postman', 'xdg-desktop-portal-gtk', 'gnome-network-panel', 'pavucontrol', 'org-gnome-gedit', 'code']
+application-children=['org-gnome-software', 'update-manager', 'apport-gtk', 'gnome-power-panel', 'chromium-chromium', 'io-elementary-appcenter', 'unity-tweak-tool', 'code-code', 'org-gnome-epiphany', 'gnome-control-center', 'snap-store-ubuntu-software', 'guake', 'gnome-system-monitor', 'org-gnome-nautilus', 'org-gnome-terminal', 'postman-postman', 'xdg-desktop-portal-gtk', 'gnome-network-panel', 'pavucontrol', 'org-gnome-gedit', 'code', 'org-gnome-meld', 'firefox', 'org-gnome-shell-extensions', 'y-ppa-manager', 'vlc']
 show-banners=true
 show-in-lock-screen=false
 
@@ -319,6 +327,9 @@ application-id='code_code.desktop'
 
 [org/gnome/desktop/notifications/application/code]
 application-id='code.desktop'
+
+[org/gnome/desktop/notifications/application/firefox]
+application-id='firefox.desktop'
 
 [org/gnome/desktop/notifications/application/gnome-control-center]
 application-id='gnome-control-center.desktop'
@@ -344,8 +355,14 @@ application-id='org.gnome.Epiphany.desktop'
 [org/gnome/desktop/notifications/application/org-gnome-gedit]
 application-id='org.gnome.gedit.desktop'
 
+[org/gnome/desktop/notifications/application/org-gnome-meld]
+application-id='org.gnome.meld.desktop'
+
 [org/gnome/desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-shell-extensions]
+application-id='org.gnome.Shell.Extensions.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-software]
 application-id='org.gnome.Software.desktop'
@@ -368,8 +385,14 @@ application-id='unity-tweak-tool.desktop'
 [org/gnome/desktop/notifications/application/update-manager]
 application-id='update-manager.desktop'
 
+[org/gnome/desktop/notifications/application/vlc]
+application-id='vlc.desktop'
+
 [org/gnome/desktop/notifications/application/xdg-desktop-portal-gtk]
 application-id='xdg-desktop-portal-gtk.desktop'
+
+[org/gnome/desktop/notifications/application/y-ppa-manager]
+application-id='y-ppa-manager.desktop'
 
 [org/gnome/desktop/peripherals/touchpad]
 two-finger-scrolling-enabled=true
@@ -396,7 +419,7 @@ idle-delay=uint32 0
 [org/gnome/desktop/sound]
 allow-volume-above-100-percent=false
 event-sounds=true
-theme-name='__custom'
+theme-name='elementary'
 
 [org/gnome/desktop/wm/keybindings]
 activate-window-menu=['<Alt>space']
@@ -438,6 +461,9 @@ toggle-maximized=['<Control><Alt>KP_5']
 toggle-shaded=['<Control><Alt>s']
 unmaximize=['<Control><Super>Down']
 
+[org/gnome/desktop/wm/preferences]
+button-layout=':minimize,maximize,close'
+
 [org/gnome/eog/view]
 background-color='rgb(0,0,0)'
 use-background-color=true
@@ -467,16 +493,16 @@ sort-type='ascending'
 
 [org/gnome/file-roller/ui]
 sidebar-width=200
-window-height=480
-window-width=600
+window-height=900
+window-width=1846
 
 [org/gnome/gedit/plugins]
-active-plugins=['modelines', 'time', 'docinfo', 'spell', 'filebrowser']
+active-plugins=['modelines', 'spell', 'docinfo', 'filebrowser', 'time']
 
 [org/gnome/gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/rmanhart/Downloads'
+virtual-root='file:///home/rmanhart/Downloads/Enchanted'
 
 [org/gnome/gedit/preferences/editor]
 highlight-current-line=false
@@ -494,7 +520,7 @@ size=(728, 532)
 state=43908
 
 [org/gnome/gnome-system-monitor]
-current-tab='processes'
+current-tab='disks'
 maximized=false
 network-in-bits=false
 show-dependencies=false
@@ -506,8 +532,12 @@ window-state=(700, 500, 72, 50)
 col-6-visible=true
 col-6-width=0
 
+[org/gnome/meld/window-state]
+height=400
+width=677
+
 [org/gnome/nautilus/preferences]
-default-folder-viewer='icon-view'
+default-folder-viewer='list-view'
 search-filter-time-type='last_modified'
 search-view='list-view'
 
@@ -526,16 +556,33 @@ hinting='slight'
 app-picker-layout=[{'software-properties-drivers.desktop': <{'position': <0>}>, 'chromium_chromium.desktop': <{'position': <1>}>, 'org.gnome.Nautilus.desktop': <{'position': <2>}>, 'firefox.desktop': <{'position': <3>}>, 'guake-prefs.desktop': <{'position': <4>}>, 'guake.desktop': <{'position': <5>}>, 'htop.desktop': <{'position': <6>}>, 'display-im6.q16.desktop': <{'position': <7>}>, 'gnome-language-selector.desktop': <{'position': <8>}>, 'software-properties-livepatch.desktop': <{'position': <9>}>, 'org.gnome.PowerStats.desktop': <{'position': <10>}>, 'gnome-control-center.desktop': <{'position': <11>}>, 'software-properties-gtk.desktop': <{'position': <12>}>, 'update-manager.desktop': <{'position': <13>}>, 'gnome-session-properties.desktop': <{'position': <14>}>, 'org.gnome.gedit.desktop': <{'position': <15>}>, 'snap-store_ubuntu-software.desktop': <{'position': <16>}>, 'Utilities': <{'position': <17>}>, 'vim.desktop': <{'position': <18>}>, 'virtualbox.desktop': <{'position': <19>}>, 'code.desktop': <{'position': <20>}>, 'org.gnome.Calculator.desktop': <{'position': <21>}>, 'org.gnome.Evince.desktop': <{'position': <22>}>, 'org.gnome.eog.desktop': <{'position': <23>}>}, {'org.gnome.seahorse.Application.desktop': <{'position': <0>}>}]
 app-picker-view=uint32 1
 command-history=['r']
-disable-user-extensions=true
-enabled-extensions=@as []
-favorite-apps=['org.gnome.Nautilus.desktop', 'chromium_chromium.desktop', 'org.gnome.Terminal.desktop', 'guake.desktop', 'code.desktop']
+disable-user-extensions=false
+enabled-extensions=['ubuntu-dock@ubuntu.com', 'desktop-icons@csoriano', 'ubuntu-appindicators@ubuntu.com', 'system-monitor@paradoxxx.zero.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']
+favorite-apps=['org.gnome.Nautilus.desktop', 'chromium_chromium.desktop', 'guake.desktop', 'code.desktop', 'postman_postman.desktop', 'org.gnome.meld.desktop', 'org.gnome.tweaks.desktop']
 
 [org/gnome/shell/extensions/dash-to-dock]
 dash-max-icon-size=44
 dock-fixed=true
 dock-position='LEFT'
-multi-monitor=false
+multi-monitor=true
 preferred-monitor=0
+
+[org/gnome/shell/extensions/system-monitor]
+center-display=false
+compact-display=false
+cpu-individual-cores=false
+cpu-style='both'
+disk-display=false
+memory-style='both'
+move-clock=false
+net-speed-in-bits=true
+net-style='digit'
+show-tooltip=false
+swap-display=false
+thermal-display=false
+
+[org/gnome/shell/extensions/user-theme]
+name='Arc-Dark'
 
 [org/gnome/software]
 check-timestamp=int64 1605958794
@@ -562,7 +609,7 @@ sort-column='name'
 sort-directories-first=true
 sort-order='ascending'
 type-format='category'
-window-position=(259, 80)
+window-position=(258, 27)
 window-size=(1471, 900)
 
 [system/locale]
