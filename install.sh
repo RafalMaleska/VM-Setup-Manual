@@ -87,7 +87,8 @@ function basic-software {
     zsh \
     powerline \
     fonts-powerline \
-    jq 
+    jq \
+    shellcheck
   export VERSION="4.0.0-alpha1"
   export BINARY="yq_linux_amd64"
   sudo wget https://github.com/mikefarah/yq/releases/download/$VERSION/$BINARY -O /usr/bin/yq &&\
@@ -125,7 +126,7 @@ function dev-tools {
 # Java
   sudo apt install default-jdk
   sudo snap install postman
-# Git
+# Merge Diff Tool
   sudo apt-get install meld -y
 # Hugo
   sudo apt-get install hugo -y
@@ -284,21 +285,21 @@ function main {
 #  add-ssh
 #  customize
 #  virtualbox-addons
-#  basic-software
-#  vscode
-#  dev-tools 
-#  docker-install
-#  kubernetes
-#  helm
-#  kind-install
-#  kustomize-install
-#  argo-install
+  basic-software
+  vscode
+  dev-tools 
+  docker-install
+  kubernetes
+  helm
+  kind-install
+  kustomize-install
+  argo-install
   kubebuilder-install
-#  gcloud-sdk
-#  multimedia
-#  pimp-the-shell
-#  load-personal-config
-#  finish
+  gcloud-sdk
+  multimedia
+  pimp-the-shell
+  load-personal-config
+  finish
 }
 
 main
