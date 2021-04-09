@@ -259,7 +259,7 @@ function load-personal-config {
 
 function pimp-the-shell {
   sudo rm -rf ~/.zsh-suite
-  git clone git@github.com:RafalMaleska/shell.git ~/projects/VM-Setup/shell
+  git clone https://github.com/RafalMaleska/shell.git ~/projects/VM-Setup/shell
   ~/projects/VM-Setup/shell/install.zsh
   zsh
 }
