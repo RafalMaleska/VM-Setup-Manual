@@ -211,7 +211,39 @@ function kubebuilder-install {
   sudo mv /tmp/kubebuilder_2.3.1_${os}_${arch} /usr/local/kubebuilder
   sudo export PATH=$PATH:/usr/local/kubebuilder/bin
 }
-
+# K9S
+  function k9s-install {
+    curl -s https://api.github.com/repos/derailed/k9s/releases |\ 
+    grep browser_download |\ 
+    grep download |\
+    grep x86_64 |\ 
+    grep -m 1 Linux |\ 
+    cut -d '"' -f 4 |\ 
+    xargs curl -O -L
+    tar xzf ./k9s_Linux_x86_64.tar.gz
+    sudo mv k9s /usr/bin/k9s
+    chmod u+x /usr/bin/k9s
+    rm -rf k9s_Linux_x86_64.tar.gz
+}
+# Krew
+  function krew-install {
+    set -x; cd "$(mktemp -d)" &&
+    OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
+    ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
+    curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/krew.tar.gz" &&
+    tar zxvf krew.tar.gz &&
+    KREW=./krew-"${OS}_${ARCH}" &&
+    "$KREW" install krew
+    export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+}
+# Kubectl-Krew-Plugins
+  function install-kubectl-plugins {
+    kubectl krew install get-all
+    kubectl krew install score
+    kubectl krew install sniff
+    kubectl krew install tree
+    kubectl krew install oidc-login
+}
 
 ### Installing Cloud Stuff
 #
@@ -227,6 +259,7 @@ function gcloud-sdk {
 #
 
 function multimedia {
+  sudo apt install -y wireshark
   sudo apt install -y chromium-browser
   sudo apt install -y vlc
   sudo apt install -y ubuntu-restricted-extras 
@@ -280,11 +313,11 @@ function finish {
 ###
 
 function main {
-#  git-clone-script
-#  add-user
-#  add-ssh
-#  customize
-#  virtualbox-addons
+  git-clone-script
+  add-user
+  add-ssh
+  customize
+  virtualbox-addons
   basic-software
   vscode
   dev-tools 
@@ -295,6 +328,9 @@ function main {
   kustomize-install
   argo-install
   kubebuilder-install
+  k9s-install
+  krew-install
+  install-kubectl-plugins 
   gcloud-sdk
   multimedia
   pimp-the-shell
