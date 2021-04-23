@@ -243,6 +243,7 @@ function kubebuilder-install {
     kubectl krew install sniff
     kubectl krew install tree
     kubectl krew install oidc-login
+    kubectl krew install view-secret
 }
 
 ### Installing Cloud Stuff
