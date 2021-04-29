@@ -209,7 +209,7 @@ function kubebuilder-install {
   # move to a long-term location and put it on your path
   # (you'll need to set the KUBEBUILDER_ASSETS env var if you put it somewhere else)
   sudo mv /tmp/kubebuilder_2.3.1_${os}_${arch} /usr/local/kubebuilder
-  sudo export PATH=$PATH:/usr/local/kubebuilder/bin
+  echo 'export PATH=$PATH:/usr/local/kubebuilder/bin' >> ~/.zshrc
 }
 # K9S
   function k9s-install {
@@ -234,7 +234,7 @@ function kubebuilder-install {
     tar zxvf krew.tar.gz &&
     KREW=./krew-"${OS}_${ARCH}" &&
     "$KREW" install krew
-    export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+    echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.zshrc
 }
 # Kubectl-Krew-Plugins
   function install-kubectl-plugins {
@@ -244,6 +244,7 @@ function kubebuilder-install {
     kubectl krew install tree
     kubectl krew install oidc-login
     kubectl krew install view-secret
+    kubectl krew install neat
 }
 
 ### Installing Cloud Stuff
