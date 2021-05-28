@@ -245,6 +245,7 @@ function kubebuilder-install {
     kubectl krew install oidc-login
     kubectl krew install view-secret
     kubectl krew install neat
+    kubectl krew install hns
 }
 
 ### Installing Cloud Stuff
