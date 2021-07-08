@@ -89,7 +89,7 @@ function basic-software {
     fonts-powerline \
     jq \
     shellcheck
-  export VERSION="4.0.0-alpha1"
+  export VERSION="v4.9.8"
   export BINARY="yq_linux_amd64"
   sudo wget https://github.com/mikefarah/yq/releases/download/$VERSION/$BINARY -O /usr/bin/yq &&\
   sudo chmod +x /usr/bin/yq
