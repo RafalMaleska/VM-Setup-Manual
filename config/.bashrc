@@ -1,3 +1,6 @@
+# brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# ssh
 eval $(ssh-agent) > /dev/null
 ssh-add ~/.ssh/id_rsa.key > /dev/null 2>&1
 /bin/zsh
@@ -119,3 +122,5 @@ if ! shopt -oq posix; then
   fi
 fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+#krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

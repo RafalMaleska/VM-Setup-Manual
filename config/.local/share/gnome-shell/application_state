@@ -1,29 +1,21 @@
 <?xml version="1.0"?>
 <application-state>
   <context id="">
-    <application id="gnome-language-selector.desktop" score="23" last-seen="1605896920"/>
-    <application id="org.gnome.tweaks.desktop" score="45" last-seen="1606014545"/>
-    <application id="org.gnome.FileRoller.desktop" score="18" last-seen="1606014190"/>
-    <application id="org.gnome.Shell.Extensions.desktop" score="36" last-seen="1606010029"/>
-    <application id="chromium_chromium.desktop" score="1202" last-seen="1606014545"/>
-    <application id="guake.desktop" score="0" last-seen="1605997634"/>
-    <application id="gnome-control-center.desktop" score="136" last-seen="1606006917"/>
-    <application id="apport-gtk.desktop" score="1" last-seen="1605976393"/>
-    <application id="gcr-prompter.desktop" score="7" last-seen="1606007829"/>
-    <application id="update-manager.desktop" score="13" last-seen="1605887648"/>
-    <application id="org.gnome.Nautilus.desktop" score="39" last-seen="1606014530"/>
-    <application id="org.gnome.eog.desktop" score="3" last-seen="1605977675"/>
-    <application id="snap-store_ubuntu-software.desktop" score="2" last-seen="1605974472"/>
-    <application id="gnome-initial-setup.desktop" score="33" last-seen="1605887519"/>
-    <application id="org.gnome.seahorse.Application.desktop" score="43" last-seen="1606008834"/>
-    <application id="org.gnome.Terminal.desktop" score="5860" last-seen="1606014399"/>
-    <application id="org.gnome.meld.desktop" score="0" last-seen="1606005101"/>
-    <application id="vlc.desktop" score="1" last-seen="1606014531"/>
-    <application id="firefox.desktop" score="78" last-seen="1606014190"/>
-    <application id="xdg-desktop-portal-gtk.desktop" score="0" last-seen="1606013310"/>
-    <application id="gnome-system-monitor.desktop" score="2" last-seen="1606014190"/>
-    <application id="code.desktop" score="1667" last-seen="1606014331"/>
-    <application id="org.gnome.gedit.desktop" score="1" last-seen="1606013897"/>
-    <application id="gkbd-keyboard-display.desktop" score="0" last-seen="1605896378"/>
+    <application id="org.gnome.FileRoller.desktop" score="3" last-seen="1634134545"/>
+    <application id="brave-browser.desktop" score="576" last-seen="1634574029"/>
+    <application id="google-chrome.desktop" score="10853.625" last-seen="1634572932"/>
+    <application id="guake.desktop" score="3521" last-seen="1634635328"/>
+    <application id="chromium_chromium.desktop" score="8077.25" last-seen="1634029466"/>
+    <application id="software-properties-gtk.desktop" score="2" last-seen="1634333429"/>
+    <application id="gnome-control-center.desktop" score="12" last-seen="1634337909"/>
+    <application id="gcr-prompter.desktop" score="191.5" last-seen="1634629780"/>
+    <application id="org.gnome.Nautilus.desktop" score="5" last-seen="1634568242"/>
+    <application id="update-manager.desktop" score="15" last-seen="1634333434"/>
+    <application id="org.gnome.seahorse.Application.desktop" score="9" last-seen="1634567233"/>
+    <application id="virtualbox.desktop" score="4" last-seen="1634567120"/>
+    <application id="org.gnome.Evolution-alarm-notify.desktop" score="20" last-seen="1634630509"/>
+    <application id="display-im6.q16.desktop" score="0" last-seen="1634567147"/>
+    <application id="code.desktop" score="21333.016127167215" last-seen="1634579727"/>
+    <application id="debian-xterm.desktop" score="0" last-seen="1634567133"/>
   </context>
 </application-state>
